@@ -9,15 +9,15 @@
    "EIGHTY","NINTY"};
    int *value,temp;
 
-void num_to_string(int *num){
-        int number = *num;
+void num_to_string(int *num){     //parameter is address so pointer is used to access the data
+        int number = *num;        //it shows error on checking pointer with integer  eg (num < 1000) so its assigned to interger
   if(number==0){
           printf("ZERO");
           }
      if(number<9999){
              if(number>1000){
-             temp=number/1000;
-             number=number%1000;
+             temp=number/1000;        //divide and say the quotient
+             number=number%1000;      //perform modulo and bring the reminder
              printf("%s THOUSAND",single_digit[temp-1]);
              }
         if(number>100){
@@ -46,7 +46,7 @@ void num_to_string(int *num){
 int main(){
      value=malloc(sizeof(int));
      printf("Enter the number");
-     scanf("%d",value);
-     num_to_string(value);
+     scanf("%d",value);          //user input to convert the number into string
+     num_to_string(value);       //pass by reference
       return 0;
 }
